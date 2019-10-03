@@ -39,6 +39,8 @@ RUN pear install PHP_CodeSniffer
 RUN docker-php-ext-enable \
     imagick \
     xdebug
+RUN docker-php-ext-configure zip \
+     --with-libzip=/usr/include
 RUN docker-php-ext-install \
     curl \
     iconv \
